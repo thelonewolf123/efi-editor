@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="439.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <TabPane layoutX="22.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+        <tabs>
+          <Tab text="EFI Entries">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="list_entry" layoutX="16.0" layoutY="10.0" prefHeight="355.0" prefWidth="688.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="10.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+          <Tab text="Create New">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" prefHeight="29.0" prefWidth="107.0" text="Entry Name" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+                        <TextField fx:id="efi_name" layoutX="121.0" layoutY="16.0" prefHeight="26.0" prefWidth="472.0" AnchorPane.leftAnchor="121.0" AnchorPane.topAnchor="16.0" />
+                        <ListView fx:id="listview_create_new" layoutX="14.0" layoutY="52.0" prefHeight="248.0" prefWidth="200.0" AnchorPane.bottomAnchor="81.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="52.0" />
+                        <Button layoutX="232.0" layoutY="58.0" mnemonicParsing="false" onAction="#choose_efi" text="Choose EFI" AnchorPane.leftAnchor="232.0" AnchorPane.topAnchor="58.0" />
+                        <TextField fx:id="efi_edit" layoutX="342.0" layoutY="58.0" prefHeight="26.0" prefWidth="250.0" AnchorPane.leftAnchor="342.0" AnchorPane.topAnchor="58.0" />
+                        <ScrollPane fx:id="" layoutX="14.0" layoutY="309.0" prefHeight="66.0" prefWidth="695.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="10.0">
+                           <content>
+                              <Label fx:id="status_create_new" text="Label" />
+                           </content>
+                        </ScrollPane>
+                        <Button fx:id="create_efi" layoutX="643.0" layoutY="274.0" mnemonicParsing="false" onAction="#create_entry" text="Create" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Delete Existing">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView layoutX="14.0" layoutY="14.0" prefHeight="307.0" prefWidth="688.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="14.0" />
+                        <Button fx:id="delete_entry_button" layoutX="640.0" layoutY="341.0" mnemonicParsing="false" onAction="#delete_entry" text="Delete" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="18.0" />
+                        <ListView fx:id="listview_delete_efi" layoutX="15.0" layoutY="14.0" prefHeight="307.0" prefWidth="686.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="14.0" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Changhe Boot Order">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="listview_change_order" layoutX="14.0" layoutY="14.0" prefHeight="292.0" prefWidth="686.0" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="14.0" />
+                        <Button fx:id="down_entry" layoutX="122.0" layoutY="341.0" mnemonicParsing="false" onAction="#down_entry" prefHeight="26.0" prefWidth="73.0" text="Down" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="110.0" />
+                        <Button layoutX="14.0" layoutY="341.0" mnemonicParsing="false" onAction="#up_entry" prefHeight="26.0" prefWidth="81.0" text="Up" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" />
+                        <Button layoutX="618.0" layoutY="341.0" mnemonicParsing="false" onAction="#change_boot_order" prefHeight="26.0" prefWidth="92.0" text="Apply" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="23.0" />
+                        <Button layoutX="487.0" layoutY="341.0" mnemonicParsing="false" onAction="#reset_entry" prefHeight="26.0" prefWidth="92.0" text="Reset" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="about">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView layoutX="14.0" layoutY="14.0" prefHeight="359.0" prefWidth="694.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="14.0" />
+                        <ImageView fitHeight="181.0" fitWidth="210.0" layoutX="25.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resource/IMG_20190920_065934.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="TOP_LEFT" layoutX="245.0" layoutY="24.0" prefHeight="23.0" prefWidth="441.0" text="EFI editor is a frontend GUI for efibootmgr. It works Like a simple " wrapText="true" />
+                        <Label contentDisplay="TOP" layoutX="23.0" layoutY="217.0" prefHeight="42.0" prefWidth="678.0" text="I'm an Eletronics Engineering student, freelancing web developer and Ethical Hacker." AnchorPane.leftAnchor="23.0" />
+                        <Label layoutX="25.0" layoutY="194.0" prefHeight="29.0" prefWidth="157.0" style="-fx-font-size: 18;" text="About developer" AnchorPane.leftAnchor="23.0" />
+                        <Label layoutX="25.0" layoutY="259.0" prefHeight="29.0" prefWidth="558.0" text="I'm living in India." AnchorPane.leftAnchor="23.0" />
+                        <Label layoutX="23.0" layoutY="295.0" prefHeight="29.0" prefWidth="558.0" text="Email ID: harishkumar.vellore@gmail.com" AnchorPane.leftAnchor="23.0" />
+                        <Label layoutX="23.0" layoutY="331.0" prefHeight="29.0" prefWidth="558.0" text="Telegram ID : hacker_hk" AnchorPane.leftAnchor="23.0" />
+                        <Label alignment="TOP_LEFT" layoutX="245.0" layoutY="47.0" prefHeight="23.0" prefWidth="441.0" text="command genarator for the efibootmgr tool." wrapText="true" />
+                        <Label layoutX="245.0" layoutY="70.0" prefHeight="29.0" prefWidth="157.0" style="-fx-font-size: 18;" text="Feactures" />
+                        <Label layoutX="245.0" layoutY="99.0" prefHeight="29.0" prefWidth="558.0" text="1. Create new EFI boot entries" />
+                        <Label layoutX="245.0" layoutY="128.0" prefHeight="29.0" prefWidth="440.0" text="2. Delete the existing boot entry" />
+                        <Label layoutX="246.0" layoutY="153.0" prefHeight="29.0" prefWidth="440.0" text="3. Change boot order" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <MenuBar prefHeight="29.0" prefWidth="719.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#refreshlist" text="Refresh" />
+              <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
