@@ -1,5 +1,5 @@
 # efi-editor
-EFI-editor is a simple GUI based command generator for efibootmgr. I have created it for the Linux systems. The fear everyone windows user face, when they think about migrate to Linux, is, It's terminal because almost all windows tools works based on GUI so it'll be a hard transition for them so I was decided to the created front end for Linux command-line tools. This EFI-editor is a part of it.
+EFI-editor is a simple GUI based command generator for efibootmgr. I have created it for the Linux systems. The fear every windows user face is, when they think about migrate to Linux, It's terminal because almost all windows apps works based on GUI so it'll be a hard transition for them so I was decided to the created front end for Linux command-line tools. This EFI-editor is a part of it.
 
 
 It's work like a simple command generator to the efibootmgr. I was fully designed this project on JavaFX. So It require oracle java to run.
