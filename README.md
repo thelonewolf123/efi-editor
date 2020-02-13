@@ -1,5 +1,6 @@
 # efi-editor
-It's a simple GUI for efibootmgr.
+EFI-editor is a simple GUI based command generator for efibootmgr. I have created it for the Linux systems. The fear everyone windows user face, when they think about migrate to Linux, is, It's terminal because almost all windows tools works based on GUI so it'll be a hard transition for them so I was decided to the created front end for Linux command-line tools. This EFI-editor is a part of it.
+
 
 It's work like a simple command generator to the efibootmgr. I was fully designed this project on JavaFX. So It require oracle java to run.
 
@@ -12,6 +13,11 @@ With this EFI-Editor, You can,
 2. Delete Existing boot entry
 
 3. Change the boot order. 
+
+# dependancy
+It's depending on efibootmgr. 
+
+        sudo apt install efibootmgr
 
 # Usage
 
