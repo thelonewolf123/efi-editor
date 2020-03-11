@@ -22,3 +22,6 @@ It's depending on efibootmgr.
 # Usage
 
         sudo java -jar EFI_Editor.jar
+
+# Screenshot
+![](Screenshot_20200202_151558.png)
